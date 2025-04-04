@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Presenças | Login</title>
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <main class="container">
+        <div class="login-card">
+            <h1>Controle de Presenças</h1>
+            <p class="subtitle">Acesse como:</p>
+            
+            <div class="login-options">
+                <button id="professor-login" class="btn btn-primary">Professor</button>
+                <button id="monitor-login" class="btn btn-secondary">Monitor</button>
+                <a href="student/view.html" class="btn btn-outline">Aluno</a>
+            </div>
+            
+            <div id="login-form" class="hidden">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button id="submit-login" class="btn btn-primary">Entrar</button>
+                <button id="back-button" class="btn btn-text">Voltar</button>
+            </div>
+            
+            <div id="student-code-form" class="hidden">
+                <div class="form-group">
+                    <label for="student-code">Código de Acesso</label>
+                    <input type="text" id="student-code" placeholder="Digite o código fornecido pelo professor">
+                </div>
+                <button id="access-student" class="btn btn-primary">Acessar</button>
+                <button id="back-student" class="btn btn-text">Voltar</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="assets/js/db.js"></script>
+    <script src="assets/js/auth.js"></script>
+</body>
+</html>

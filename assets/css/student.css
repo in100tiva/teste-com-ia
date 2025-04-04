@@ -1,0 +1,77 @@
+/* Estilo específico para a interface do aluno */
+.student-info {
+    padding: var(--space-lg);
+    background-color: var(--background-alt);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .student-info h2 {
+    margin-bottom: var(--space-md);
+    color: var(--primary-color);
+  }
+  
+  .attendance-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--space-md);
+  }
+  
+  .summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-md);
+    background-color: var(--background);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .summary-label {
+    font-size: var(--font-size-sm);
+    color: var(--text-medium);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .summary-item span:last-child {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+  }
+  
+  .attendance-history h3 {
+    margin-bottom: var(--space-md);
+  }
+  
+  .attendance-record {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .attendance-record:last-child {
+    border-bottom: none;
+  }
+  
+  .record-date {
+    font-weight: 500;
+  }
+  
+  .record-status {
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+  }
+  
+  .status-present {
+    background-color: rgba(52, 199, 89, 0.1);
+    color: var(--success);
+  }
+  
+  .status-absent {
+    background-color: rgba(255, 59, 48, 0.1);
+    color: var(--error);
+  }

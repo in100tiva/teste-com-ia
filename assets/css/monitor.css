@@ -1,0 +1,103 @@
+/* Estilo específico para a interface do monitor */
+.app-header {
+    flex-direction: column;
+    align-items: start;
+    padding-bottom: var(--space-sm);
+  }
+  
+  .date-info {
+    font-size: var(--font-size-md);
+    font-weight: 500;
+  }
+  
+  .student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .student-item:last-child {
+    border-bottom: none;
+  }
+  
+  .student-name {
+    flex: 1;
+    font-size: var(--font-size-lg);
+  }
+  
+  .attendance-status {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Botão de presença otimizado para toque */
+  .attendance-checkbox {
+    position: relative;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .attendance-checkbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .attendance-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .attendance-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .attendance-slider {
+    background-color: var(--success);
+  }
+  
+  input:focus + .attendance-slider {
+    box-shadow: 0 0 1px var(--success);
+  }
+  
+  input:checked + .attendance-slider:before {
+    transform: translateX(26px);
+  }
+  
+  .attendance-actions {
+    position: sticky;
+    bottom: var(--space-md);
+    background-color: var(--background);
+    padding: var(--space-md) 0;
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-xl);
+  }
+  
+  /* Estilo específico para facilitar o uso móvel */
+  @media (max-width: 767px) {
+    .student-item {
+      padding: var(--space-lg) var(--space-md);
+    }
+    
+    .btn-large {
+      padding: var(--space-lg);
+    }
+  }

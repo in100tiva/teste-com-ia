@@ -1,0 +1,163 @@
+/* Dashboard específico do professor */
+.dashboard-section {
+    margin-bottom: var(--space-xl);
+  }
+  
+  .dashboard-section h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .class-card {
+    padding: var(--space-md);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-md);
+    background-color: var(--background);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .class-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .class-card h3 {
+    margin-bottom: var(--space-xs);
+  }
+  
+  .class-meta {
+    font-size: var(--font-size-sm);
+    color: var(--text-medium);
+    display: flex;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .class-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+  
+  /* Tela de registro de presenças */
+  .attendance-controls {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+    padding: var(--space-md);
+    background-color: var(--background-alt);
+    border-radius: var(--radius-md);
+  }
+  
+  .date-selector {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .date-selector input[type="date"] {
+    flex: 1;
+  }
+  
+  .attendance-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .student-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .student-item:last-child {
+    border-bottom: none;
+  }
+  
+  .student-name {
+    flex: 1;
+  }
+  
+  .attendance-status {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .attendance-summary {
+    margin-top: var(--space-lg);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+  
+  /* Estilos para checkbox personalizado */
+  .attendance-checkbox {
+    position: relative;
+    width: 50px;
+    height: 26px;
+  }
+  
+  .attendance-checkbox input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .attendance-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .attendance-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .attendance-slider {
+    background-color: var(--success);
+  }
+  
+  input:focus + .attendance-slider {
+    box-shadow: 0 0 1px var(--success);
+  }
+  
+  input:checked + .attendance-slider:before {
+    transform: translateX(24px);
+  }
+  
+  @media (min-width: 768px) {
+    .attendance-controls {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    
+    .date-selector {
+      width: 60%;
+    }
+    
+    .attendance-actions {
+      width: 40%;
+    }
+  }

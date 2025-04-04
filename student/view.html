@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualização de Presenças</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/student.css">
+</head>
+<body>
+    <header class="app-header">
+        <a href="../index.html" class="back-link" aria-label="Voltar">
+            <span class="icon">←</span>
+        </a>
+        <h1>Minhas Presenças</h1>
+    </header>
+    
+    <main class="container">
+        <div id="student-info" class="student-info">
+            <h2 id="student-name">...</h2>
+            <div class="attendance-summary">
+                <div class="summary-item">
+                    <span class="summary-label">Total de Aulas:</span>
+                    <span id="total-classes">...</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Presenças:</span>
+                    <span id="total-present">...</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Percentual:</span>
+                    <span id="attendance-percentage">...</span>
+                </div>
+            </div>
+        </div>
+        
+        <section class="attendance-history">
+            <h3>Histórico de Presenças</h3>
+            <div id="attendance-list" class="list-container">
+                <!-- Attendance records will be loaded dynamically -->
+                <p class="loading">Carregando histórico...</p>
+            </div>
+        </section>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/student.js"></script>
+</body>
+</html>

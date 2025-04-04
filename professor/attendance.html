@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Presenças</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/professor.css">
+</head>
+<body>
+    <header class="app-header">
+        <a href="dashboard.html" class="back-link" aria-label="Voltar">
+            <span class="icon">←</span>
+        </a>
+        <h1 id="class-title">Registro de Presenças</h1>
+        <button id="logout" class="btn-icon" aria-label="Sair">
+            <span class="icon">⇥</span>
+        </button>
+    </header>
+    
+    <main class="container">
+        <section class="attendance-controls">
+            <div class="date-selector">
+                <button id="prev-date" class="btn-icon" aria-label="Data anterior">
+                    <span class="icon">◀</span>
+                </button>
+                <input type="date" id="attendance-date">
+                <button id="next-date" class="btn-icon" aria-label="Próxima data">
+                    <span class="icon">▶</span>
+                </button>
+            </div>
+            
+            <div class="attendance-actions">
+                <button id="mark-all" class="btn btn-secondary">Marcar Todos</button>
+                <button id="save-attendance" class="btn btn-primary">Salvar</button>
+            </div>
+        </section>
+        
+        <section class="attendance-list">
+            <div class="list-header">
+                <div class="student-name">Nome</div>
+                <div class="attendance-status">Presente</div>
+            </div>
+            
+            <div id="students-list" class="list-container">
+                <!-- Students will be loaded dynamically -->
+                <p class="loading">Carregando alunos...</p>
+            </div>
+        </section>
+        
+        <section class="attendance-summary">
+            <button id="add-student" class="btn btn-secondary">Adicionar Aluno</button>
+            <button id="generate-link" class="btn btn-outline">Gerar Link para Monitor</button>
+        </section>
+        
+        <div id="add-student-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Adicionar Aluno</h2>
+                <form id="student-form">
+                    <div class="form-group">
+                        <label for="student-name">Nome do Aluno</label>
+                        <input type="text" id="student-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="student-email">Email (opcional)</label>
+                        <input type="email" id="student-email">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancel-student" class="btn btn-text">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Adicionar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="share-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Link para Monitor</h2>
+                <p>Compartilhe este link com o monitor para registrar presenças:</p>
+                <div class="share-link-container">
+                    <input type="text" id="share-link" readonly>
+                    <button id="copy-link" class="btn btn-icon" aria-label="Copiar">
+                        <span class="icon">📋</span>
+                    </button>
+                </div>
+                <div class="form-actions">
+                    <button id="close-share" class="btn btn-primary">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/professor.js"></script>
+</body>
+</html>

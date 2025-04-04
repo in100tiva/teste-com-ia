@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Professor</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/professor.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>Dashboard do Professor</h1>
+        <button id="logout" class="btn-icon" aria-label="Sair">
+            <span class="icon">⇥</span>
+        </button>
+    </header>
+    
+    <main class="container">
+        <section class="dashboard-section">
+            <h2>Turmas</h2>
+            <button id="add-class" class="btn btn-primary">Nova Turma</button>
+            
+            <div id="classes-list" class="list-container">
+                <!-- Classes will be loaded dynamically -->
+                <p class="loading">Carregando turmas...</p>
+            </div>
+        </section>
+        
+        <div id="add-class-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Nova Turma</h2>
+                <form id="class-form">
+                    <div class="form-group">
+                        <label for="class-name">Nome da Turma</label>
+                        <input type="text" id="class-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="class-schedule">Horário</label>
+                        <input type="text" id="class-schedule" placeholder="Ex: Segunda e Quarta, 19h-21h">
+                    </div>
+                    <div class="form-group">
+                        <label for="class-start">Data de Início</label>
+                        <input type="date" id="class-start" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="class-end">Data de Término</label>
+                        <input type="date" id="class-end" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" id="cancel-class" class="btn btn-text">Cancelar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/professor.js"></script>
+</body>
+</html>

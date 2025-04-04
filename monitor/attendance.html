@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Presenças - Monitor</title>
+    <link rel="stylesheet" href="../assets/css/variables.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="../assets/css/monitor.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1 id="class-title">Registro de Presenças</h1>
+        <p id="date-display" class="date-info"></p>
+    </header>
+    
+    <main class="container">
+        <section class="attendance-list">
+            <div class="list-header">
+                <div class="student-name">Nome</div>
+                <div class="attendance-status">Presente</div>
+            </div>
+            
+            <div id="students-list" class="list-container">
+                <!-- Students will be loaded dynamically -->
+                <p class="loading">Carregando alunos...</p>
+            </div>
+        </section>
+        
+        <section class="attendance-actions">
+            <button id="save-attendance" class="btn btn-primary btn-large">Salvar Presenças</button>
+        </section>
+    </main>
+    
+    <div id="success-notification" class="notification hidden">
+        Presenças salvas com sucesso!
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../assets/js/db.js"></script>
+    <script src="../assets/js/monitor.js"></script>
+</body>
+</html>
